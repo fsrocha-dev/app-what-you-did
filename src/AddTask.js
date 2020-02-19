@@ -5,7 +5,7 @@ import nanoid from "nanoid";
 
 const AddTask = ({ onNewTask }) => {
   const [text, setText] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Outros");
 
   return (
     <div>
