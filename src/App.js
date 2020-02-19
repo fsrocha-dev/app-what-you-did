@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Swal from "sweetalert2";
 import Header from "./Header";
 import AddTask from "./AddTask";
 import Main from "./Main";
+import useLocalstorage from "@rooks/use-localstorage";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalstorage("app-task:db", []);
   console.log(tasks);
   return (
     <div>
