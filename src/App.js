@@ -14,7 +14,7 @@ const App = () => {
           setTasks([...tasks, t]);
         }}
       />
-      <Main />
+      <Main tasks={tasks} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import nanoid from "nanoid";
 
 // import { Container } from './styles';
 
@@ -11,7 +12,8 @@ const AddTask = ({ onNewTask }) => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          onNewTask({ text, category });
+          onNewTask({ id: nanoid(), text, category });
+          setText("");
         }}
       >
         <select value={category} onChange={e => setCategory(e.target.value)}>
