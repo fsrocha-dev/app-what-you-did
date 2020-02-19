@@ -14,7 +14,19 @@ const App = () => {
           setTasks([...tasks, t]);
         }}
       />
-      <Main tasks={tasks} />
+      <Main
+        tasks={tasks}
+        onNewTaskDone={(taskId, log) => {
+          setTasks([
+            ...tasks.map(t => {
+              if (t.id !== taskId) {
+                return t;
+              }
+              return { ...t, logs: [...t.logs, log] };
+            })
+          ]);
+        }}
+      />
     </div>
   );
 };

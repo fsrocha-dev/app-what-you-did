@@ -12,7 +12,7 @@ const AddTask = ({ onNewTask }) => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          onNewTask({ id: nanoid(), text, category });
+          onNewTask({ id: nanoid(), text, category, logs: [] });
           setText("");
         }}
       >
