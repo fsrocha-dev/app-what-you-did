@@ -18,14 +18,18 @@ const Container = styled.div`
 const THEMES = {
   dark: {
     background: "#3e3e3e",
+    selectedBackground: "#333",
     text: "#fff",
     itemColor: "#fff",
-    categoryColor: "#fff"
+    categoryColor: "#fff",
+    headerFilter: "white"
   },
   light: {
     background: "#fff",
+    selectedBackground: "#fafafa",
     text: "#333",
-    categoryColor: "#929db6"
+    categoryColor: "#929db6",
+    headerFilter: "black"
   }
 };
 
@@ -36,7 +40,7 @@ const App = () => {
   return (
     <ThemeProvider theme={THEMES[darkTheme ? "dark" : "light"]}>
       <div>
-        <Header onToggleDarkTheme={() => setDarkTheme(!darkTheme)} />
+        <Header toggleDarkTheme={() => setDarkTheme(!darkTheme)} />
         <AddTask
           onNewTask={t => {
             setTasks([...tasks, t]);
