@@ -4,12 +4,22 @@ import Header from "./Header";
 import AddTask from "./AddTask";
 import Main from "./Main";
 import useLocalstorage from "@rooks/use-localstorage";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+
+const Container = styled.div`
+  position: fixed;
+  display: grid;
+  height: 100vh;
+  height: fill-available;
+  width: 100%;
+  grid-template-rows: 64px 130px auto;
+`;
 
 const THEMES = {
   dark: {
     background: "#3e3e3e",
     text: "#fff",
+    itemColor: "#fff",
     categoryColor: "#fff"
   },
   light: {
